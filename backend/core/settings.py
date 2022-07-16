@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'core.apps.common',
+    'core.apps.authentication',
+]
 
 THIRD_PARTY_APPS = [
     'rest_framework',
@@ -134,3 +137,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Customizing authentication in Django
+# https://docs.djangoproject.com/en/4.0/topics/auth/customizing/
+
+AUTH_USER_MODEL = 'authentication.User'
