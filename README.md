@@ -2,8 +2,6 @@
 
 ## Backend
 
----
-
 - Go to directory that have manage.py file
 
   ```bash
