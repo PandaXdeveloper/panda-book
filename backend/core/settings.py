@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 PROJECT_APPS = [
     'core.apps.common',
     'core.apps.authentication',
+    'core.apps.product',
 ]
 
 THIRD_PARTY_APPS = [
