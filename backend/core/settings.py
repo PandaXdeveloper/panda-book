@@ -55,6 +55,7 @@ PROJECT_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'django_filters',
 ]
 
 INSTALLED_APPS += PROJECT_APPS + THIRD_PARTY_APPS
@@ -143,3 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # https://docs.djangoproject.com/en/4.0/topics/auth/customizing/
 
 AUTH_USER_MODEL = 'authentication.User'
+
+# Django Rest Framework
+# https://www.django-rest-framework.org/
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+}
