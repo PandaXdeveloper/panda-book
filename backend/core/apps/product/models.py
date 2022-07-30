@@ -1,3 +1,4 @@
+import math
 from decimal import Decimal
 
 from core.apps.authentication.models import User
@@ -33,7 +34,9 @@ class Book(models.Model):
 
     @property
     def special_price(self):
-        return self.normal_price - (self.normal_price * Decimal(self.percentage_discount / 100))
+        return math.floor(
+            self.normal_price - (self.normal_price * Decimal(self.percentage_discount / 100))
+        )
 
     class Meta:
         ordering = ['id']
