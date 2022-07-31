@@ -33,8 +33,10 @@ class Book(models.Model):
 
     @property
     def special_price(self):
-        return round(
-            self.normal_price - (self.normal_price * Decimal(self.percentage_discount / 100))
+        return Decimal(
+            round(
+                self.normal_price - (self.normal_price * Decimal(self.percentage_discount / 100))
+            )
         )
 
     class Meta:
