@@ -5,6 +5,9 @@ from rest_framework import serializers
 
 
 class BookListSerializer(FlexFieldsWritableNestedModelSerializer):
+    normal_price = serializers.DecimalField(max_digits=7, decimal_places=2)
+    special_price = serializers.DecimalField(max_digits=7, decimal_places=2)
+
     class Meta:
         model = Book
         fields = [
@@ -20,6 +23,8 @@ class BookListSerializer(FlexFieldsWritableNestedModelSerializer):
 class BookRetrieveSerializer(FlexFieldsWritableNestedModelSerializer):
     category = BookCategoryListSerializer()
     cover_type_display = serializers.CharField(source='get_cover_type_display')
+    normal_price = serializers.DecimalField(max_digits=7, decimal_places=2)
+    special_price = serializers.DecimalField(max_digits=7, decimal_places=2)
 
     class Meta:
         model = Book
