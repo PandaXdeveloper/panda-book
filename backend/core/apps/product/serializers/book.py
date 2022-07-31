@@ -17,6 +17,7 @@ class BookListSerializer(FlexFieldsWritableNestedModelSerializer):
             'author',
             'normal_price',
             'special_price',
+            'style',
         ]
 
 
@@ -25,6 +26,7 @@ class BookRetrieveSerializer(FlexFieldsWritableNestedModelSerializer):
     cover_type_display = serializers.CharField(source='get_cover_type_display')
     normal_price = serializers.DecimalField(max_digits=7, decimal_places=2)
     special_price = serializers.DecimalField(max_digits=7, decimal_places=2)
+    style_display = serializers.CharField(source='get_style_display')
 
     class Meta:
         model = Book
@@ -46,6 +48,8 @@ class BookRetrieveSerializer(FlexFieldsWritableNestedModelSerializer):
             'number_of_page',
             'detail',
             'image',
+            'style',
+            'style_display',
         ]
 
 
@@ -67,4 +71,5 @@ class BookWriteSerializer(FlexFieldsWritableNestedModelSerializer):
             'number_of_page',
             'detail',
             'image',
+            'style',
         ]
